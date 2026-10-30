@@ -26,6 +26,7 @@ Local packaging changes:
 - The hackathon coach includes a practical field guide connecting the existing workflow with web/PPT skills. Original evaluation photographs, personal identifiers, credentials, and local conversation transcripts are not included.
 - Frontend Design is scoped to the confirmed MVP; its fictional design brief is not treated as a real user statement. Webapp Testing adds portable setup guidance and bounded user-visible waits for streaming/polling apps. Upstream examples remain as reference material.
 - React Best Practices is used only for relevant React/Next.js work. Web Design Guidelines adds a dated fallback snapshot when its upstream web fetch is unavailable. A plain MIT license text plus the upstream license declaration is retained for agent-skills, which has no standalone root LICENSE at the pinned commit.
+- React's upstream `metadata.json` is renamed `upstream-metadata.json` because the skills CLI excludes the original filename. Its contents are preserved and the README distinguishes upstream maintenance instructions from using the bundled reference.
 - Slides retains the PptxGenJS workflow, utilities, assets, license and OpenAI attribution from JetBrains/skills. BUNDLE.md adds terminal setup, Korean font checks, evidence-based content guidance and explicit reporting when visual validation cannot run.
 
 Local installer and packaging helpers are provided for this bundle. Third-party components retain their original licenses; no repository-wide license is substituted for them.

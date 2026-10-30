@@ -27,6 +27,7 @@ class InstallTests(unittest.TestCase):
                              'webapp-testing/scripts/with_server.py', 'webapp-testing/BUNDLE.md',
                              'web-design-guidelines/references/web-interface-guidelines.md',
                              'vercel-react-best-practices/AGENTS.md',
+                             'vercel-react-best-practices/upstream-metadata.json',
                              'probe-hackathon-coach/references/field-guide.md']:
                 self.assertTrue((skills/relative).is_file(), relative)
             for name in ['frontend-design', 'webapp-testing', 'slides',
