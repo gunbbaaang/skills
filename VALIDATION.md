@@ -6,6 +6,7 @@
 |---|---|
 | OpenAI skill-creator 형식 검사 | 13개 SKILL.md 통과 |
 | skills CLI 1.7.4, 로컬 저장소 전체 설치 | 13개 발견 및 복사 설치 성공 |
+| 공개 GitHub 저장소에서 전체 설치 | `gunbbaaang/skills`를 새 시험 폴더에 내려받아 13개 설치 성공. 설치 대상 508개 파일을 원본과 비교해 누락·내용 차이 없음(텍스트 줄바꿈 정규화) |
 | Python 설치기 | 새 설치, 동일 내용 재실행, 기존 수정본 백업·새 버전 설치, 없는 대상 폴더 오류 처리 통과 |
 | Understand Anything 공유 런타임 | 설치된 복사본에서 경로 확인, pnpm 10.6.2 의존성 설치, core TypeScript 빌드, 실제 core import 성공 |
 | Graphify | 별도 가상 환경에 graphifyy 0.9.97 설치, CLI 버전 출력 성공 |
