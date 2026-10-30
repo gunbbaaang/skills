@@ -1,0 +1,40 @@
+import contextlib
+import importlib.util
+import io
+from pathlib import Path
+import tempfile
+import unittest
+
+spec = importlib.util.spec_from_file_location('bundle_install', Path(__file__).with_name('install.py'))
+installer = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(installer)
+
+class InstallTests(unittest.TestCase):
+    def test_fresh_repeat_and_modified_copy(self):
+        with tempfile.TemporaryDirectory(prefix='bundle test ') as tmp:
+            root = Path(tmp)
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(installer.install(root), 13)
+            skills = root / '.agents/skills'
+            self.assertTrue((skills/'understand/runtime/packages/core/package.json').is_file())
+            self.assertTrue((skills/'graphify/references').is_dir())
+            self.assertTrue((skills/'visual-explainer/kit/render.mjs').is_file())
+            with contextlib.redirect_stdout(io.StringIO()) as output:
+                installer.install(root)
+            self.assertEqual(output.getvalue().count('UNCHANGED '), 13)
+            handoff = skills/'handoff/SKILL.md'
+            handoff.write_text('my local customization', encoding='utf-8')
+            with contextlib.redirect_stdout(io.StringIO()):
+                installer.install(root)
+            backups = list((root/'.agents/skill-backups').glob('*/handoff/SKILL.md'))
+            self.assertEqual(len(backups), 1)
+            self.assertEqual(backups[0].read_text(encoding='utf-8'), 'my local customization')
+            self.assertEqual(handoff.read_bytes(), (installer.ROOT/'skills/handoff/SKILL.md').read_bytes())
+
+    def test_incomplete_destination_reports_error(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            with self.assertRaises(FileNotFoundError):
+                installer.install(Path(tmp)/'missing-project')
+
+if __name__ == '__main__':
+    unittest.main()

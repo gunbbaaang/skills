@@ -1,0 +1,68 @@
+{
+  "bundle_version": "1.0.0",
+  "sources": [
+    {
+      "repository": "gunbbaaang/probe-hackathon-kit",
+      "commit": "0c8dd7c6ce1107e40b06fa440dcc6d49cdff9089",
+      "paths": [
+        "skills/probe-hackathon-coach"
+      ],
+      "licenses": [
+        "Original user-owned preparation material; see THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "repository": "mattpocock/skills",
+      "commit": "a496f5513d4a4cf889bc48e189e579f4b0bdf6aa",
+      "paths": [
+        "skills/productivity/handoff"
+      ],
+      "licenses": [
+        "licenses/handoff-LICENSE"
+      ]
+    },
+    {
+      "repository": "OthmanAdi/planning-with-files",
+      "commit": "5d29800bf8b919ca9a88ee7885b90050b5cb64ed",
+      "paths": [
+        "skills/planning-with-files"
+      ],
+      "licenses": [
+        "licenses/planning-LICENSE"
+      ]
+    },
+    {
+      "repository": "nicobailon/visual-explainer",
+      "commit": "5f378868e0ea745a6284b51e710c390f0c76f72c",
+      "paths": [
+        "plugins/visual-explainer"
+      ],
+      "licenses": [
+        "licenses/visual-LICENSE"
+      ]
+    },
+    {
+      "repository": "Graphify-Labs/graphify",
+      "commit": "0a8cd4e1e342235fe53e881fb5d591bf0460071f",
+      "paths": [
+        "graphify/skill-codex.md",
+        "graphify/skills/codex/references"
+      ],
+      "licenses": [
+        "licenses/graphify-LICENSE",
+        "licenses/graphify-LICENSE-MIT",
+        "licenses/graphify-NOTICE"
+      ]
+    },
+    {
+      "repository": "Egonex-AI/Understand-Anything",
+      "commit": "4e6d3299017a7432da15957874992837a315c5b4",
+      "paths": [
+        "understand-anything-plugin (excluding Figma skill and duplicate skill entrypoints)"
+      ],
+      "licenses": [
+        "licenses/understand-LICENSE"
+      ]
+    }
+  ]
+}

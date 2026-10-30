@@ -1,0 +1,4 @@
+interface:
+  display_name: "Probe 해커톤 코치"
+  short_description: "Probe 안의 Codex 대화에서 목표·판단·검증·이해를 확인하는 코치"
+  default_prompt: "$probe-hackathon-coach Probe 실전 모드로 진행해 줘. 이 터미널 대화에서 목표·선택 이유·실제 검증을 짧게 설명하고, 중요한 시점에 내 이해를 한 문제씩 확인해 줘."

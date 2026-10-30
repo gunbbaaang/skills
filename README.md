@@ -1,0 +1,85 @@
+# gunbbaaang / skills
+
+**이 주소 하나만 기억하세요: `github.com/gunbbaaang/skills`**
+
+Probe 해커톤 준비를 위한 Codex 스킬 묶음입니다. 문제 정의와 검증을 돕는 한국어 코치, 작업 기록, 인계, 시각적 요약, 코드 관계도를 **13개 스킬로 한 번에 설치**합니다. 원본 출처·버전·라이선스는 [출처 안내](THIRD_PARTY_NOTICES.md)와 [버전 기록](sources.lock.json)에 있습니다.
+
+## 현장에서 Codex에게 할 말
+
+아래 문장을 **평가받는 Probe 환경 안의 Codex 대화창**에 붙여 넣으세요.
+
+```text
+https://github.com/gunbbaaang/skills 저장소의 README.md와 INSTALL.md를 읽고,
+여기 있는 스킬을 지금 작업 중인 프로젝트에 전부 설치해줘.
+기존에 수정한 스킬은 백업하고, 설치된 목록과 시작하는 방법을 알려줘.
+```
+
+“gunbbaaang 깃허브의 skills 레포에 있는 거 다 설치해줘”라고 짧게 말해도 찾을 수 있도록 [에이전트 설치 안내](AGENTS.md)를 넣었습니다. 주소까지 붙이면 동명의 저장소와 혼동할 가능성을 줄일 수 있습니다. 설치 대상은 현재 프로젝트의 `.agents/skills/`입니다. 이 PC에만 설치한 스킬은 다른 Probe 환경으로 자동 전달되지 않습니다.
+
+## 셸에서 직접 한 줄 설치
+
+깨끗한 작업 폴더에서 실행합니다. Node.js 22.20 이상과 Git이 필요하며 GitHub 로그인은 필요 없습니다.
+
+Windows PowerShell:
+
+```powershell
+npx.cmd --yes skills@1.7.4 add gunbbaaang/skills --skill '*' --agent codex --copy --yes
+```
+
+macOS / Linux:
+
+```bash
+npx --yes skills@1.7.4 add gunbbaaang/skills --skill '*' --agent codex --copy --yes
+```
+
+기존 스킬을 수정했다면 Codex에게 위의 자연어 요청을 하세요. 포함된 Python 설치기는 변경된 기존 파일을 `.agents/skill-backups/`에 보존합니다. [설치·업데이트 상세](INSTALL.md)
+
+## 들어 있는 것
+
+| 역할 | 설치되는 스킬 | 언제 쓰나 |
+|---|---|---|
+| 해커톤 코치 | `probe-hackathon-coach` | AI 사원 인터뷰, 문제 정의, 범위 결정, 구현·검증, 참가자 이해 확인 |
+| 작업 기록 | `planning-with-files` | 계획·발견·진행 상황을 파일에 남기고 다음 대화에서 복구 |
+| 인계 | `handoff` | 새 세션이 이어받을 목표·현재 상태·다음 행동 요약 |
+| 사람이 보는 요약 | `visual-explainer` | 기록과 근거를 바탕으로 HTML 현황판·구조도·설명 페이지 작성 |
+| 관계도 | `graphify` | 코드와 문서의 연결을 탐색 가능한 그래프로 표현 |
+| 코드 분석 | `understand` | 코드의 구조와 관계 분석 |
+| 그래프 화면 | `understand-dashboard` | 생성된 그래프를 브라우저에서 탐색 |
+| 코드 질문 | `understand-chat` | 분석한 코드베이스에 질문 |
+| 변경 영향 | `understand-diff` | 바뀐 코드가 어디에 영향을 주는지 검토 |
+| 업무 구조 | `understand-domain` | 업무 개념과 처리 흐름 정리 |
+| 상세 설명 | `understand-explain` | 특정 파일·함수의 동작 설명 |
+| 문서 지식 | `understand-knowledge` | 위키·지식 문서의 연결 분석 |
+| 빠른 파악 | `understand-onboard` | 코드와 프로젝트를 이어받는 사람을 위한 안내 |
+
+모두 설치해도 매 작업에 모두 실행할 필요는 없습니다. Figma 전용 연동은 이 해커톤 묶음에 포함하지 않았습니다.
+
+## 설치 후 바로 시작
+
+```text
+$probe-hackathon-coach
+Probe 실전 모드로 진행해줘. 이 터미널에서 너와 나누는 대화가 평가 대상이야.
+확인된 요구사항, 선택 이유, 실제 검증 결과, 다음 행동을 기록하면서 진행하자.
+기존 기록 파일이 있으면 재사용하고, 사실·내 판단·AI 제안·미검증 가설을 구분해줘.
+중요한 결정과 검증은 이 대화에서도 짧게 설명해줘.
+기록을 보여달라고 하면 visual-explainer로 사람이 읽기 좋은 현황판을 만들고,
+새 세션으로 넘길 때는 handoff로 현재 상태와 다음 행동을 인계해줘.
+```
+
+상황별로 이렇게 말해도 됩니다.
+
+- **기록 시작:** `$planning-with-files 지금 과제의 계획과 진행 상황을 기록해줘. 기존 기록과 중복되지 않게 해줘.`
+- **현황판:** `$visual-explainer 현재 목표·결정 이유·진행 상황·실제 검증 결과·다음 행동을 한국어 HTML로 보여줘. 원본 기록 링크와 갱신 시각을 넣어줘.`
+- **인계:** `$handoff 다음 세션이 바로 이어갈 수 있도록 probe-notes/HANDOFF.md에 기록해줘. 기존 문서는 경로로 참조하고 다음 행동을 구체적으로 써줘.`
+- **코드 이해:** `$understand --language ko` → `$understand-dashboard`
+- **코드·문서 관계도:** `$graphify 현재 프로젝트에서 핵심 코드와 요구사항 문서의 연결을 보여줘.`
+
+스킬 목록이 현재 대화에서 아직 갱신되지 않으면 해당 `.agents/skills/<이름>/SKILL.md`를 읽어 달라고 하거나 새 Codex 세션에서 시작하세요.
+
+## 설치와 실행 준비의 차이
+
+한 줄 설치는 **스킬과 참고 자료·런타임 소스 파일**을 설치합니다. Graphify는 첫 사용 때 Python 패키지가 필요하고, Understand Anything은 포함된 런타임의 Node 의존성 설치와 빌드가 필요합니다. 이 준비에는 인터넷과 시간이 들 수 있으므로 행사 전에 한 번 실행해 보세요. 설치만으로 프로젝트 분석이나 현황판 생성이 완료되지는 않습니다. [도구별 준비 조건](INSTALL.md#첫-사용-시-필요한-실행-환경)
+
+이 묶음은 자동 기록 훅, 전역 Codex 설정, 외부 전송, 자동 공개를 설정하지 않습니다. 기록은 실제 작업 중 스킬을 적용하며 갱신합니다. 기록 파일이 Probe의 평가 로그에 자동 수집된다고 가정하지 않습니다.
+
+공식 대회 운영사와 무관한 개인 준비용 자료입니다. 실제 대회의 규칙과 제출 형식이 우선합니다. [설치 확인 범위](VALIDATION.md)
