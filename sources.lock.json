@@ -1,5 +1,5 @@
 {
-  "bundle_version": "1.1.0",
+  "bundle_version": "1.2.0",
   "sources": [
     {
       "repository": "gunbbaaang/probe-hackathon-kit",
@@ -105,6 +105,40 @@
       ],
       "licenses": [
         "licenses/slides-LICENSE.txt"
+      ]
+    },
+    {
+      "repository": "anthropics/knowledge-work-plugins",
+      "commit": "2574e29377c7173d0cecffef29a6ecbd7f8ccb5d",
+      "paths": [
+        "data/skills/explore-data",
+        "data/skills/validate-data",
+        "data/skills/data-visualization",
+        "data/CONNECTORS.md",
+        "data/LICENSE"
+      ],
+      "licenses": [
+        "licenses/anthropic-data-LICENSE.txt"
+      ]
+    },
+    {
+      "repository": "obra/superpowers",
+      "commit": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+      "paths": [
+        "skills/systematic-debugging (operational resources; authoring logs and pressure-test prompts excluded)"
+      ],
+      "licenses": [
+        "licenses/systematic-debugging-LICENSE.txt"
+      ]
+    },
+    {
+      "repository": "wshobson/agents",
+      "commit": "0874a27b17a22e2b7c2e2bcd725768e0803cad06",
+      "paths": [
+        "plugins/llm-application-dev/skills/llm-evaluation"
+      ],
+      "licenses": [
+        "licenses/llm-evaluation-LICENSE.txt"
       ]
     }
   ]

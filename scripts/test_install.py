@@ -13,7 +13,9 @@ class InstallTests(unittest.TestCase):
     def test_fresh_repeat_and_modified_copy(self):
         expected = {p.parent.name for p in (installer.ROOT/'skills').glob('*/SKILL.md')}
         self.assertTrue({'frontend-design', 'vercel-react-best-practices',
-                         'web-design-guidelines', 'webapp-testing', 'slides'} <= expected)
+                         'web-design-guidelines', 'webapp-testing', 'slides',
+                         'explore-data', 'validate-data', 'data-visualization',
+                         'llm-evaluation', 'systematic-debugging'} <= expected)
         with tempfile.TemporaryDirectory(prefix='bundle test ') as tmp:
             root = Path(tmp)
             with contextlib.redirect_stdout(io.StringIO()):
@@ -28,10 +30,19 @@ class InstallTests(unittest.TestCase):
                              'web-design-guidelines/references/web-interface-guidelines.md',
                              'vercel-react-best-practices/AGENTS.md',
                              'vercel-react-best-practices/upstream-metadata.json',
-                             'probe-hackathon-coach/references/field-guide.md']:
+                             'probe-hackathon-coach/references/field-guide.md',
+                             'probe-hackathon-coach/references/score-playbook.md',
+                             'probe-hackathon-coach/references/evidence-skills.md',
+                             'explore-data/CONNECTORS.md', 'validate-data/CONNECTORS.md',
+                             'llm-evaluation/references/details.md',
+                             'llm-evaluation/references/hackathon-eval.md',
+                             'systematic-debugging/root-cause-tracing.md',
+                             'systematic-debugging/condition-based-waiting-example.ts']:
                 self.assertTrue((skills/relative).is_file(), relative)
             for name in ['frontend-design', 'webapp-testing', 'slides',
-                         'vercel-react-best-practices', 'web-design-guidelines']:
+                         'vercel-react-best-practices', 'web-design-guidelines',
+                         'explore-data', 'validate-data', 'data-visualization',
+                         'llm-evaluation', 'systematic-debugging']:
                 self.assertTrue((skills/name/'LICENSE.txt').is_file(), name)
             with contextlib.redirect_stdout(io.StringIO()) as output:
                 installer.install(root)

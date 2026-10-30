@@ -2,7 +2,7 @@
 
 **이 주소 하나만 기억하세요: `github.com/gunbbaaang/skills`**
 
-Probe 해커톤 준비를 위한 Codex 스킬 묶음입니다. 문제 정의와 검증을 돕는 한국어 코치, 작업 기록, 인계, 시각적 요약, 코드 관계도, 웹·PPT 제작을 **18개 스킬로 한 번에 설치**합니다. 원본 출처·버전·라이선스는 [출처 안내](THIRD_PARTY_NOTICES.md)와 [버전 기록](sources.lock.json)에 있습니다.
+Probe 해커톤 준비를 위한 Codex 스킬 묶음입니다. 문제 정의와 검증을 돕는 한국어 코치, 작업 기록, 인계, 시각적 요약, 코드 관계도, 웹·PPT 제작을 **23개 스킬로 한 번에 설치**합니다. 원본 출처·버전·라이선스는 [출처 안내](THIRD_PARTY_NOTICES.md)와 [버전 기록](sources.lock.json)에 있습니다.
 
 처음 쓴다면 **[Probe 실전 사용 순서 — 웹과 PPT까지](skills/probe-hackathon-coach/references/field-guide.md)**를 보세요. 단계별 요청문과 4시간을 가정한 시간표를 담았습니다.
 
@@ -50,6 +50,11 @@ npx --yes skills@1.7.4 add gunbbaaang/skills --skill '*' --agent codex --copy --
 | 웹 품질 점검 | `web-design-guidelines` | 접근성·키보드 조작·입력·모바일 화면 검토 |
 | 웹 동작 검증 | `webapp-testing` | 실제 브라우저에서 핵심 흐름·오류·복구 확인 |
 | 편집 가능한 PPT | `slides` | 발표용 `.pptx`와 다시 만들 수 있는 원본 작성 |
+| 데이터 탐색 | `explore-data` | CSV·Excel·표의 구조, 결측·중복·패턴 확인 |
+| 분석 근거 검증 | `validate-data` | PPT·보고서 수치의 분모·집계·비교와 주장 점검 |
+| 발표용 차트 | `data-visualization` | 검증된 수치를 출처·단위가 있는 차트로 표현 |
+| AI 출력 평가 | `llm-evaluation` | 챗봇·검색·요약의 실제 응답과 변경 전후 품질 비교 |
+| 오류 원인 추적 | `systematic-debugging` | 오류 재현·원인 가설·최소 수정·재검증 |
 | 코드 분석 | `understand` | 코드의 구조와 관계 분석 |
 | 그래프 화면 | `understand-dashboard` | 생성된 그래프를 브라우저에서 탐색 |
 | 코드 질문 | `understand-chat` | 분석한 코드베이스에 질문 |
@@ -83,6 +88,14 @@ Probe 실전 모드로 진행해줘. 이 터미널에서 너와 나누는 대화
 - **웹 제작:** `$frontend-design 합의한 문제와 완료 기준을 바탕으로 핵심 흐름 하나를 구현해줘. React/Next.js를 사용 중이면 vercel-react-best-practices도 적용해줘.`
 - **웹 검증:** `$webapp-testing 핵심 흐름의 정상 입력·잘못된 입력·실패 후 복구를 실제 브라우저로 확인하고 기대 결과와 실제 결과를 기록해줘. 이어서 web-design-guidelines로 접근성과 모바일 화면을 점검해줘.`
 - **발표 자료:** `$slides 실제 인터뷰·구현·검증 기록을 근거로 [발표 시간]에 맞는 편집 가능한 PPT를 만들어줘. 문제 → 근거 → 선택 이유 → 시연 → 검증 → 한계 순서로 구성하고, 실측과 가정을 구분해줘. PPT와 원본을 함께 남겨줘.`
+
+데이터·AI 품질을 보강할 때는 [추가 스킬 사용 가이드](skills/probe-hackathon-coach/references/evidence-skills.md)를 보세요. 고득점 준비 진행표는 [실전 가이드](skills/probe-hackathon-coach/references/score-playbook.md)에 있습니다.
+
+- **데이터 받기:** `$explore-data 제공된 데이터의 구조·결측·중복을 확인하고 확인된 사실과 인터뷰할 가설을 나눠줘.`
+- **수치 점검:** `$validate-data PPT의 주장과 수치를 원본 데이터에 대조하고 재계산 결과와 미검증 부분을 알려줘.`
+- **차트:** `$data-visualization 검증된 결과를 한국어 발표용 차트로 만들고 출처·기간·단위를 표시해줘.`
+- **AI 기능 평가:** `$llm-evaluation 우리 AI 기능의 정상·근거 없음·모호한 질문을 같은 기준으로 평가하고 실제 출력과 실패 사례를 기록해줘.`
+- **오류 해결:** `$systematic-debugging 오류를 재현하고 근거로 원인을 좁힌 뒤 최소 수정과 재검증을 진행해줘.`
 
 스킬 목록이 현재 대화에서 아직 갱신되지 않으면 해당 `.agents/skills/<이름>/SKILL.md`를 읽어 달라고 하거나 새 Codex 세션에서 시작하세요.
 

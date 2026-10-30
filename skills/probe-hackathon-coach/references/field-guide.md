@@ -95,6 +95,8 @@ $slides
 
 ## 5. 기록 확인, 인계, 제출
 
+데이터를 받았거나 AI 응답 품질·발표 수치를 검증해야 하면 [데이터·AI 검증 스킬 사용 가이드](evidence-skills.md)를 참고한다. 데이터는 `explore-data`로 파악하고, 수치는 `validate-data`, 차트는 `data-visualization`, AI 응답은 `llm-evaluation`, 재현되는 오류는 `systematic-debugging`으로 필요한 부분만 보강한다.
+
 - 현황 확인: `$visual-explainer 기존 기록으로 현재 목표·결정 이유·검증 상태·다음 행동을 한 화면에 보여줘. 원본 경로와 갱신 시각을 넣어줘.`
 - 세션 인계: `$handoff 다음 세션이 이어갈 수 있게 probe-notes/HANDOFF.md에 목표·현재 상태·미해결 문제·다음 행동을 적고 기존 근거 파일은 경로로 연결해줘.`
 - 새 세션: `probe-notes/HANDOFF.md와 연결된 기록을 읽고 Probe 실전 모드로 이어가줘. 먼저 현재 코드와 기록이 일치하는지 확인해줘.`

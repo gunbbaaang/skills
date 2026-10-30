@@ -13,6 +13,9 @@ This is a curated redistribution, not a claim of authorship of the upstream tool
 | React Best Practices / Web Design Guidelines | https://github.com/vercel-labs/agent-skills | MIT as declared by the upstream README; React skill also declares MIT in frontmatter |
 | Web Interface Guidelines snapshot | https://github.com/vercel-labs/web-interface-guidelines | MIT, Vercel Labs |
 | Slides | https://github.com/JetBrains/skills/tree/main/slides | Apache-2.0; upstream OpenAI author/source attribution retained |
+| Explore Data / Validate Data / Data Visualization | https://github.com/anthropics/knowledge-work-plugins/tree/main/data | Apache-2.0 from the data plugin's own LICENSE |
+| Systematic Debugging | https://github.com/obra/superpowers | MIT, Jesse Vincent |
+| LLM Evaluation | https://github.com/wshobson/agents | MIT, Seth Hobson |
 | Probe Hackathon Coach | https://github.com/gunbbaaang/probe-hackathon-kit | Original preparation material from this user's project; no new blanket license is assigned here |
 
 Local packaging changes:
@@ -30,3 +33,10 @@ Local packaging changes:
 - Slides retains the PptxGenJS workflow, utilities, assets, license and OpenAI attribution from JetBrains/skills. BUNDLE.md adds terminal setup, Korean font checks, evidence-based content guidance and explicit reporting when visual validation cannot run.
 
 Local installer and packaging helpers are provided for this bundle. Third-party components retain their original licenses; no repository-wide license is substituted for them.
+
+2026-10-31 evidence-skills additions:
+
+- Three Anthropic data skills preserve their workflow/reference bodies and the data plugin's own Apache license. Host-specific argument hints and invocation flags are removed, connector links are relocated with the original connector document retained, and Korean/local-file guidance distinguishes examples, heuristics and actual evidence. The time-series example sorts each group before plotting.
+- Systematic Debugging preserves the four-phase method and supporting operational resources. References to unbundled mandatory Superpowers skills are replaced with self-contained reproduction and verification steps. Repeated failures prompt evidence review rather than an automatic architecture conclusion or mandatory approval for already-authorized work. Authoring logs and pressure-test prompts are omitted. No Superpowers plugin, hooks or subagent workflow is installed.
+- LLM Evaluation retains the upstream reference patterns with explicit notice that snippets require adaptation and are not validated turnkey code. A small local-first hackathon evaluation guide is added; perplexity wording and judge calibration guidance are corrected. No API keys, paid models, hosted datasets or external evaluation service are included or automatically invoked.
+- Popularity snapshots were checked on 2026-10-31 as discovery signals, not quality or score guarantees: skills.sh installs were approximately 5.9K (explore-data), 3.8K (validate-data), 14.0K (data-visualization), 314.2K (systematic-debugging), and 13.0K (llm-evaluation). The three upstream GitHub repositories had 33,985, 309,250, and 42,009 stars respectively. These values change over time.
