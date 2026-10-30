@@ -2,7 +2,9 @@
 
 **이 주소 하나만 기억하세요: `github.com/gunbbaaang/skills`**
 
-Probe 해커톤 준비를 위한 Codex 스킬 묶음입니다. 문제 정의와 검증을 돕는 한국어 코치, 작업 기록, 인계, 시각적 요약, 코드 관계도를 **13개 스킬로 한 번에 설치**합니다. 원본 출처·버전·라이선스는 [출처 안내](THIRD_PARTY_NOTICES.md)와 [버전 기록](sources.lock.json)에 있습니다.
+Probe 해커톤 준비를 위한 Codex 스킬 묶음입니다. 문제 정의와 검증을 돕는 한국어 코치, 작업 기록, 인계, 시각적 요약, 코드 관계도, 웹·PPT 제작을 **18개 스킬로 한 번에 설치**합니다. 원본 출처·버전·라이선스는 [출처 안내](THIRD_PARTY_NOTICES.md)와 [버전 기록](sources.lock.json)에 있습니다.
+
+처음 쓴다면 **[Probe 실전 사용 순서 — 웹과 PPT까지](skills/probe-hackathon-coach/references/field-guide.md)**를 보세요. 단계별 요청문과 4시간을 가정한 시간표를 담았습니다.
 
 ## 현장에서 Codex에게 할 말
 
@@ -43,6 +45,11 @@ npx --yes skills@1.7.4 add gunbbaaang/skills --skill '*' --agent codex --copy --
 | 인계 | `handoff` | 새 세션이 이어받을 목표·현재 상태·다음 행동 요약 |
 | 사람이 보는 요약 | `visual-explainer` | 기록과 근거를 바탕으로 HTML 현황판·구조도·설명 페이지 작성 |
 | 관계도 | `graphify` | 코드와 문서의 연결을 탐색 가능한 그래프로 표현 |
+| 웹 화면 제작 | `frontend-design` | 확정한 사용자·업무 흐름에 맞는 화면 디자인과 구현 |
+| React 구현 | `vercel-react-best-practices` | React/Next.js를 쓸 때 성능·구현 방식 점검 |
+| 웹 품질 점검 | `web-design-guidelines` | 접근성·키보드 조작·입력·모바일 화면 검토 |
+| 웹 동작 검증 | `webapp-testing` | 실제 브라우저에서 핵심 흐름·오류·복구 확인 |
+| 편집 가능한 PPT | `slides` | 발표용 `.pptx`와 다시 만들 수 있는 원본 작성 |
 | 코드 분석 | `understand` | 코드의 구조와 관계 분석 |
 | 그래프 화면 | `understand-dashboard` | 생성된 그래프를 브라우저에서 탐색 |
 | 코드 질문 | `understand-chat` | 분석한 코드베이스에 질문 |
@@ -73,12 +80,15 @@ Probe 실전 모드로 진행해줘. 이 터미널에서 너와 나누는 대화
 - **인계:** `$handoff 다음 세션이 바로 이어갈 수 있도록 probe-notes/HANDOFF.md에 기록해줘. 기존 문서는 경로로 참조하고 다음 행동을 구체적으로 써줘.`
 - **코드 이해:** `$understand --language ko` → `$understand-dashboard`
 - **코드·문서 관계도:** `$graphify 현재 프로젝트에서 핵심 코드와 요구사항 문서의 연결을 보여줘.`
+- **웹 제작:** `$frontend-design 합의한 문제와 완료 기준을 바탕으로 핵심 흐름 하나를 구현해줘. React/Next.js를 사용 중이면 vercel-react-best-practices도 적용해줘.`
+- **웹 검증:** `$webapp-testing 핵심 흐름의 정상 입력·잘못된 입력·실패 후 복구를 실제 브라우저로 확인하고 기대 결과와 실제 결과를 기록해줘. 이어서 web-design-guidelines로 접근성과 모바일 화면을 점검해줘.`
+- **발표 자료:** `$slides 실제 인터뷰·구현·검증 기록을 근거로 [발표 시간]에 맞는 편집 가능한 PPT를 만들어줘. 문제 → 근거 → 선택 이유 → 시연 → 검증 → 한계 순서로 구성하고, 실측과 가정을 구분해줘. PPT와 원본을 함께 남겨줘.`
 
 스킬 목록이 현재 대화에서 아직 갱신되지 않으면 해당 `.agents/skills/<이름>/SKILL.md`를 읽어 달라고 하거나 새 Codex 세션에서 시작하세요.
 
 ## 설치와 실행 준비의 차이
 
-한 줄 설치는 **스킬과 참고 자료·런타임 소스 파일**을 설치합니다. Graphify는 첫 사용 때 Python 패키지가 필요하고, Understand Anything은 포함된 런타임의 Node 의존성 설치와 빌드가 필요합니다. 이 준비에는 인터넷과 시간이 들 수 있으므로 행사 전에 한 번 실행해 보세요. 설치만으로 프로젝트 분석이나 현황판 생성이 완료되지는 않습니다. [도구별 준비 조건](INSTALL.md#첫-사용-시-필요한-실행-환경)
+한 줄 설치는 **스킬과 참고 자료·런타임 소스 파일**을 설치합니다. Graphify는 Python 패키지, Understand Anything은 Node 의존성과 빌드, 웹 테스트는 Playwright와 브라우저, PPT 작성은 PptxGenJS가 필요합니다. PPT를 이미지로 확인하는 과정에는 LibreOffice와 Poppler도 사용합니다. 첫 실행 준비에는 인터넷과 시간이 들 수 있으므로 행사 전에 사용할 도구를 한 번 실행해 보세요. [도구별 준비 조건](INSTALL.md#첫-사용-시-필요한-실행-환경)
 
 이 묶음은 자동 기록 훅, 전역 Codex 설정, 외부 전송, 자동 공개를 설정하지 않습니다. 기록은 실제 작업 중 스킬을 적용하며 갱신합니다. 기록 파일이 Probe의 평가 로그에 자동 수집된다고 가정하지 않습니다.
 

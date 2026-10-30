@@ -11,17 +11,30 @@ spec.loader.exec_module(installer)
 
 class InstallTests(unittest.TestCase):
     def test_fresh_repeat_and_modified_copy(self):
+        expected = {p.parent.name for p in (installer.ROOT/'skills').glob('*/SKILL.md')}
+        self.assertTrue({'frontend-design', 'vercel-react-best-practices',
+                         'web-design-guidelines', 'webapp-testing', 'slides'} <= expected)
         with tempfile.TemporaryDirectory(prefix='bundle test ') as tmp:
             root = Path(tmp)
             with contextlib.redirect_stdout(io.StringIO()):
-                self.assertEqual(installer.install(root), 13)
+                self.assertEqual(installer.install(root), len(expected))
             skills = root / '.agents/skills'
+            self.assertEqual({p.parent.name for p in skills.glob('*/SKILL.md')}, expected)
             self.assertTrue((skills/'understand/runtime/packages/core/package.json').is_file())
             self.assertTrue((skills/'graphify/references').is_dir())
             self.assertTrue((skills/'visual-explainer/kit/render.mjs').is_file())
+            for relative in ['slides/scripts/render_slides.py', 'slides/BUNDLE.md',
+                             'webapp-testing/scripts/with_server.py', 'webapp-testing/BUNDLE.md',
+                             'web-design-guidelines/references/web-interface-guidelines.md',
+                             'vercel-react-best-practices/AGENTS.md',
+                             'probe-hackathon-coach/references/field-guide.md']:
+                self.assertTrue((skills/relative).is_file(), relative)
+            for name in ['frontend-design', 'webapp-testing', 'slides',
+                         'vercel-react-best-practices', 'web-design-guidelines']:
+                self.assertTrue((skills/name/'LICENSE.txt').is_file(), name)
             with contextlib.redirect_stdout(io.StringIO()) as output:
                 installer.install(root)
-            self.assertEqual(output.getvalue().count('UNCHANGED '), 13)
+            self.assertEqual(output.getvalue().count('UNCHANGED '), len(expected))
             handoff = skills/'handoff/SKILL.md'
             handoff.write_text('my local customization', encoding='utf-8')
             with contextlib.redirect_stdout(io.StringIO()):

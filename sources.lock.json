@@ -1,9 +1,9 @@
 {
-  "bundle_version": "1.0.0",
+  "bundle_version": "1.1.0",
   "sources": [
     {
       "repository": "gunbbaaang/probe-hackathon-kit",
-      "commit": "0c8dd7c6ce1107e40b06fa440dcc6d49cdff9089",
+      "commit": "8d841a967821ddee5a44c5f740c51583dff8e4e9",
       "paths": [
         "skills/probe-hackathon-coach"
       ],
@@ -62,6 +62,49 @@
       ],
       "licenses": [
         "licenses/understand-LICENSE"
+      ]
+    },
+    {
+      "repository": "anthropics/skills",
+      "commit": "ca45fc496a3436251f191354091d557da31c15b5",
+      "paths": [
+        "skills/frontend-design",
+        "skills/webapp-testing"
+      ],
+      "licenses": [
+        "licenses/frontend-design-LICENSE.txt",
+        "licenses/webapp-testing-LICENSE.txt"
+      ]
+    },
+    {
+      "repository": "vercel-labs/agent-skills",
+      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "paths": [
+        "skills/react-best-practices",
+        "skills/web-design-guidelines"
+      ],
+      "licenses": [
+        "licenses/vercel-agent-skills-LICENSE.txt"
+      ]
+    },
+    {
+      "repository": "vercel-labs/web-interface-guidelines",
+      "commit": "434b7f91364665f2f733b310ec54809bf8f37937",
+      "paths": [
+        "command.md"
+      ],
+      "licenses": [
+        "licenses/web-interface-guidelines-LICENSE"
+      ]
+    },
+    {
+      "repository": "JetBrains/skills",
+      "commit": "3f53782dec7b5424bf6e8efbb90a46ee26f31798",
+      "paths": [
+        "slides"
+      ],
+      "licenses": [
+        "licenses/slides-LICENSE.txt"
       ]
     }
   ]
