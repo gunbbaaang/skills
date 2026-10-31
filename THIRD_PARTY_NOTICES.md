@@ -12,6 +12,7 @@ This is a curated redistribution, not a claim of authorship of the upstream tool
 | Frontend Design / Webapp Testing | https://github.com/anthropics/skills | Apache-2.0 in each selected skill's LICENSE.txt |
 | React Best Practices / Web Design Guidelines | https://github.com/vercel-labs/agent-skills | MIT as declared by the upstream README; React skill also declares MIT in frontmatter |
 | Web Interface Guidelines snapshot | https://github.com/vercel-labs/web-interface-guidelines | MIT, Vercel Labs |
+| Playwright CLI | https://github.com/microsoft/playwright-cli | Apache-2.0, Microsoft Corporation |
 | Slides | https://github.com/JetBrains/skills/tree/main/slides | Apache-2.0; upstream OpenAI author/source attribution retained |
 | Explore Data / Validate Data / Data Visualization | https://github.com/anthropics/knowledge-work-plugins/tree/main/data | Apache-2.0 from the data plugin's own LICENSE |
 | Superpowers (15 skills, including Systematic Debugging) | https://github.com/obra/superpowers | MIT, Jesse Vincent |
@@ -57,3 +58,7 @@ Local installer and packaging helpers are provided for this bundle. Third-party 
 
 - Web Security Check is an original instruction workflow connecting source review, dependency advisories, authorized live-site checks and deployment/permission inspection. External tools are not redistributed or automatically installed. OWASP, npm, PyPA and ZAP documentation are linked as references. No security certification or completed audit is implied.
 - Humanize retains blader/humanizer's SKILL.md verbatim as a reference and its MIT license in both the skill and root license directory. The new `humanize` entrypoint adds Korean editing, explicit fact/uncertainty preservation, concise output and scoped file editing. Upstream plugin metadata, hooks and developer scripts are not included. The locally installed separate `humanize-korean` package is not redistributed.
+
+2026-10-31 Playwright addition:
+
+- The official Microsoft skill and ten adjacent references retain their upstream body. Host-specific tool allowlists are removed; source, Apache license and BUNDLE.md are added. The bundle pins the tested CLI version, uses scoped sessions and requires actual verification evidence. No MCP server, global npm package or browser binary is installed merely by copying this skill.

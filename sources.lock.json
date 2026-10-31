@@ -184,6 +184,20 @@
       "licenses": [
         "licenses/humanize-LICENSE.txt"
       ]
+    },
+    {
+      "repository": "microsoft/playwright-cli",
+      "commit": "86f5616716033854f0990734fe2f9fcde0c1f6cc",
+      "paths": [
+        "skills/playwright-cli"
+      ],
+      "licenses": [
+        "licenses/playwright-cli-LICENSE.txt"
+      ],
+      "runtime": {
+        "package": "@playwright/cli",
+        "tested_version": "0.1.22"
+      }
     }
   ],
   "local_skills": [

@@ -2,7 +2,7 @@
 
 **이 주소 하나만 기억하세요: `github.com/gunbbaaang/skills`**
 
-Probe 해커톤 준비를 위한 Codex 스킬 묶음입니다. 문제 정의와 검증을 돕는 한국어 코치, 작업 기록, 인계, 시각화, 웹·PPT 제작, 데이터 검증·개발·보안 점검·윤문을 **53개 스킬로 한 번에 설치**합니다. 원본 출처·버전·라이선스는 [출처 안내](THIRD_PARTY_NOTICES.md)와 [버전 기록](sources.lock.json)에 있습니다.
+Probe 해커톤 준비를 위한 Codex 스킬 묶음입니다. 문제 정의와 검증을 돕는 한국어 코치, 작업 기록, 인계, 시각화, 웹·PPT 제작, 데이터 검증·개발·보안 점검·윤문을 **54개 스킬로 한 번에 설치**합니다. 원본 출처·버전·라이선스는 [출처 안내](THIRD_PARTY_NOTICES.md)와 [버전 기록](sources.lock.json)에 있습니다.
 
 처음 쓴다면 **[Probe 실전 사용 순서 — 웹과 PPT까지](skills/probe-hackathon-coach/references/field-guide.md)**를 보세요. 단계별 요청문과 4시간을 가정한 시간표를 담았습니다.
 
@@ -36,6 +36,18 @@ npx --yes skills@1.7.4 add gunbbaaang/skills --skill '*' --agent codex --copy --
 
 기존 스킬을 수정했다면 Codex에게 위의 자연어 요청을 하세요. 포함된 Python 설치기는 변경된 기존 파일을 `.agents/skill-backups/`에 보존합니다. [설치·업데이트 상세](INSTALL.md)
 
+## Playwright로 직접 브라우저 확인
+
+Microsoft 공식 `playwright-cli` 스킬과 참고 자료를 포함했습니다. 전체 설치 명령에 함께 포함됩니다.
+
+```text
+$playwright-cli
+이 웹앱의 핵심 흐름을 실제 브라우저에서 확인해줘.
+빈 입력, 정상 저장, 새로고침 후 상태를 점검하고 실제 결과와 화면을 남겨줘.
+```
+
+`webapp-testing`으로 검증 항목을 정하고 `playwright-cli`로 페이지 열기·클릭·입력·스크린샷을 수행합니다. 첫 사용 준비는 [Playwright 안내](skills/playwright-cli/BUNDLE.md)를 따릅니다. CLI와 실행 가능한 브라우저가 필요하며 MCP 등록은 별도입니다.
+
 ## 들어 있는 것
 
 | 역할 | 설치되는 스킬 | 언제 쓰나 |
@@ -49,6 +61,7 @@ npx --yes skills@1.7.4 add gunbbaaang/skills --skill '*' --agent codex --copy --
 | React 구현 | `vercel-react-best-practices` | React/Next.js를 쓸 때 성능·구현 방식 점검 |
 | 웹 품질 점검 | `web-design-guidelines` | 접근성·키보드 조작·입력·모바일 화면 검토 |
 | 웹 동작 검증 | `webapp-testing` | 실제 브라우저에서 핵심 흐름·오류·복구 확인 |
+| 브라우저 직접 조작 | `playwright-cli` | 페이지 열기·클릭·입력·상태 확인·화면 캡처 |
 | 공개 전 보안 점검 | `web-security-check` | 코드·의존성·실행 사이트·권한 및 배포 설정을 연결해 검토 |
 | 한국어·영어 윤문 | `humanize` | 보고서·발표 대본·README를 사실과 수치를 보존하며 자연스럽게 다듬기 |
 | 편집 가능한 PPT | `slides` | 발표용 `.pptx`와 다시 만들 수 있는 원본 작성 |
