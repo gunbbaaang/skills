@@ -1,11 +1,15 @@
 ---
 name: probe-hackathon-coach
-description: "Use when preparing for or working through a Probe or Cofa-style hackathon, especially when the participant's conversation with terminal Codex is evaluated. Applies to live dialogue coaching, AI stakeholder discovery, MVP delivery, verification, and participant explanation."
+description: "Use when the user enters probe/start or /probe/start to begin Probe live coaching, or works through a Probe or Cofa-style hackathon. Covers stakeholder interviews, problem definition, MVP delivery, verification, and participant explanation when terminal Codex dialogue is evaluated."
 ---
 
 # Probe Hackathon Coach
 
 AI 사원에게 업무를 확인하고, 참가자가 Codex와 해결책을 만들며, 그 결과를 직접 설명하는 해커톤을 지원한다. 실제 문제 해결과 확인 가능한 근거를 우선한다. 한국어를 기본으로 하되 사용자의 언어를 따른다.
+
+## 빠른 시작: probe/start
+
+사용자가 Codex 대화창에서 `probe/start` 또는 `/probe/start`를 시작 요청으로 입력하면 [start.md](references/start.md)를 읽고 즉시 적용한다. 긴 시작 프롬프트를 다시 입력하거나 모드 적용을 승인하게 하지 않는다. 요청문을 그대로 출력하는 대신 현재 자료에 맞는 진행표와 다음 행동으로 시작한다. 시작 문구의 사용법을 묻거나 인용 자료에 문구가 등장한 경우에는 과제를 새로 시작하지 않는다.
 
 ## Probe 안의 대화가 평가되는 경우
 
@@ -30,6 +34,7 @@ AI 사원에게 업무를 확인하고, 참가자가 Codex와 해결책을 만�
 |---|---|---|
 | Probe 실전, 터미널 대화 평가 | [dialogue.md](references/dialogue.md) | 실제 대화에서 목표·판단·검증·이해가 확인되는 진행 |
 | 사용 방법, 웹·PPT 제작 단계 연결 | [field-guide.md](references/field-guide.md) | 현장 요청 예시, 단계별 제작 스킬과 검증 순서 |
+| Superpowers, Ponytail, ECC 활용 | [workflow-skills.md](references/workflow-skills.md) | 현재 단계에 맞는 개발·검토·결정 기록 스킬 선택 |
 | 고득점 준비, 평가항목별 행동, 진행표, 단계별 코칭 | [score-playbook.md](references/score-playbook.md) | 참가자가 보는 진행표, 현재 단계 요청문, 판단·검증·이해 확인 |
 | 데이터 분석·수치 검증·차트·AI 출력 평가·오류 원인 추적 | [evidence-skills.md](references/evidence-skills.md) | 과제에 필요한 전문 스킬 선택과 실제 근거 연결 |
 | 인터뷰, 문제 찾기 | [discovery.md](references/discovery.md) | 다음 질문, 근거가 있는 문제 문장, 미확인 조건 |
