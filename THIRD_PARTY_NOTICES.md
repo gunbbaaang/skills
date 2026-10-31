@@ -17,6 +17,8 @@ This is a curated redistribution, not a claim of authorship of the upstream tool
 | Superpowers (15 skills, including Systematic Debugging) | https://github.com/obra/superpowers | MIT, Jesse Vincent |
 | Ponytail (6 skills) | https://github.com/DietrichGebert/ponytail | MIT, DietrichGebert |
 | ECC (8 selected skills) | https://github.com/affaan-m/ECC | MIT, Affaan Mustafa |
+| Humanize | https://github.com/blader/humanizer | MIT, Siqi Chen; Korean/Codex entrypoint adapted for this bundle |
+| Web Security Check | Original workflow in this repository | User-owned preparation material; no new blanket license assigned |
 | LLM Evaluation | https://github.com/wshobson/agents | MIT, Seth Hobson |
 | Probe Hackathon Coach | https://github.com/gunbbaaang/probe-hackathon-kit | Original preparation material from this user's project; no new blanket license is assigned here |
 
@@ -50,3 +52,8 @@ Local installer and packaging helpers are provided for this bundle. Third-party 
 - All six Ponytail skills preserve their MIT notices. Plugin namespace examples are mapped to standalone Codex names. The help page describes this bundle instead of unavailable global hooks, status bands or session import. Gain numbers remain the upstream author's benchmark claims and were not reproduced for this bundle.
 - ECC contributes search-first, api-design, error-handling, security-review, verification-loop, cost-aware-llm-pipeline, iterative-retrieval and architecture-decision-records under `ecc-` names. Existing resource files are retained. BUNDLE.md maps unavailable agent/tool names to current tools, reuses decision records, treats code/model/price examples as illustrative, and distinguishes real verification from placeholders. No ECC hook, background learning, global configuration or MCP service is installed.
 - ECC's README identifies its author as a September 2025 Anthropic x Forum Ventures hackathon winner. This is the author's report, not an independently verified event result or a claim that every skill in today's repository was used in that event. Source: the pinned repository README, About section.
+
+2026-10-31 security and writing additions (version 1.4.0):
+
+- Web Security Check is an original instruction workflow connecting source review, dependency advisories, authorized live-site checks and deployment/permission inspection. External tools are not redistributed or automatically installed. OWASP, npm, PyPA and ZAP documentation are linked as references. No security certification or completed audit is implied.
+- Humanize retains blader/humanizer's SKILL.md verbatim as a reference and its MIT license in both the skill and root license directory. The new `humanize` entrypoint adds Korean editing, explicit fact/uncertainty preservation, concise output and scoped file editing. Upstream plugin metadata, hooks and developer scripts are not included. The locally installed separate `humanize-korean` package is not redistributed.

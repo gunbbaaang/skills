@@ -1,5 +1,5 @@
 {
-  "bundle_version": "1.3.0",
+  "bundle_version": "1.4.0",
   "sources": [
     {
       "repository": "gunbbaaang/probe-hackathon-kit",
@@ -173,6 +173,25 @@
       "licenses": [
         "licenses/ecc-LICENSE.txt"
       ]
+    },
+    {
+      "repository": "blader/humanizer",
+      "commit": "0ef9fe5bc3572734fd3ae6c448fe00a30cd5dcf0",
+      "paths": [
+        "SKILL.md",
+        "LICENSE"
+      ],
+      "licenses": [
+        "licenses/humanize-LICENSE.txt"
+      ]
+    }
+  ],
+  "local_skills": [
+    {
+      "name": "web-security-check",
+      "version": "1.0.0",
+      "path": "skills/web-security-check",
+      "note": "Original bundle workflow; reference links identify external documentation, not redistributed scanner software."
     }
   ]
 }

@@ -2,7 +2,7 @@
 
 **이 주소 하나만 기억하세요: `github.com/gunbbaaang/skills`**
 
-Probe 해커톤 준비를 위한 Codex 스킬 묶음입니다. 문제 정의와 검증을 돕는 한국어 코치, 작업 기록, 인계, 시각화, 웹·PPT 제작, 데이터 검증과 개발 작업을 **51개 스킬로 한 번에 설치**합니다. 원본 출처·버전·라이선스는 [출처 안내](THIRD_PARTY_NOTICES.md)와 [버전 기록](sources.lock.json)에 있습니다.
+Probe 해커톤 준비를 위한 Codex 스킬 묶음입니다. 문제 정의와 검증을 돕는 한국어 코치, 작업 기록, 인계, 시각화, 웹·PPT 제작, 데이터 검증·개발·보안 점검·윤문을 **53개 스킬로 한 번에 설치**합니다. 원본 출처·버전·라이선스는 [출처 안내](THIRD_PARTY_NOTICES.md)와 [버전 기록](sources.lock.json)에 있습니다.
 
 처음 쓴다면 **[Probe 실전 사용 순서 — 웹과 PPT까지](skills/probe-hackathon-coach/references/field-guide.md)**를 보세요. 단계별 요청문과 4시간을 가정한 시간표를 담았습니다.
 
@@ -49,6 +49,8 @@ npx --yes skills@1.7.4 add gunbbaaang/skills --skill '*' --agent codex --copy --
 | React 구현 | `vercel-react-best-practices` | React/Next.js를 쓸 때 성능·구현 방식 점검 |
 | 웹 품질 점검 | `web-design-guidelines` | 접근성·키보드 조작·입력·모바일 화면 검토 |
 | 웹 동작 검증 | `webapp-testing` | 실제 브라우저에서 핵심 흐름·오류·복구 확인 |
+| 공개 전 보안 점검 | `web-security-check` | 코드·의존성·실행 사이트·권한 및 배포 설정을 연결해 검토 |
+| 한국어·영어 윤문 | `humanize` | 보고서·발표 대본·README를 사실과 수치를 보존하며 자연스럽게 다듬기 |
 | 편집 가능한 PPT | `slides` | 발표용 `.pptx`와 다시 만들 수 있는 원본 작성 |
 | 데이터 탐색 | `explore-data` | CSV·Excel·표의 구조, 결측·중복·패턴 확인 |
 | 분석 근거 검증 | `validate-data` | PPT·보고서 수치의 분모·집계·비교와 주장 점검 |
@@ -74,7 +76,29 @@ npx --yes skills@1.7.4 add gunbbaaang/skills --skill '*' --agent codex --copy --
 | [Ponytail](https://github.com/DietrichGebert/ponytail) | 6종 | 작은 완성형 구현, 변경 검토, 남은 한계 정리 |
 | [ECC](https://github.com/affaan-m/ECC) | 선별 8종, `ecc-` 접두사 | 재사용 조사, API·오류 처리, 보안·검증, AI 비용, 근거 탐색·결정 기록 |
 
-기존 23개에 새 스킬 28개를 추가했습니다. **[전체 이름과 상황별 요청 예시](skills/probe-hackathon-coach/references/workflow-skills.md)**를 확인하세요. Codex 자동 선택을 유지하며, `$using-superpowers`, `$ponytail full`, `$ecc-verification-loop`처럼 직접 지정할 수도 있습니다. 원본 플러그인의 자동 훅·전역 설정까지 설치하는 것은 아닙니다.
+Superpowers·Ponytail·ECC 개발 스킬과 보안 점검·윤문까지 함께 설치됩니다. **[전체 이름과 상황별 요청 예시](skills/probe-hackathon-coach/references/workflow-skills.md)**를 확인하세요. Codex 자동 선택을 유지하며, `$using-superpowers`, `$ponytail full`, `$ecc-verification-loop`처럼 직접 지정할 수도 있습니다. 원본 플러그인의 자동 훅·전역 설정까지 설치하는 것은 아닙니다.
+
+## 보안 점검과 문장 다듬기
+
+공개 전에는 다음처럼 요청합니다. URL이 없으면 코드·의존성·배포 파일부터 확인하고 실행 중인 사이트 검사는 미실행으로 남깁니다.
+
+```text
+$web-security-check
+이 웹을 공개하기 전에 코드·라이브러리·실행 중인 사이트·권한 및 배포 설정을 점검해줘.
+점검할 내 사이트: [URL]
+실제 검사 결과와 미실행 항목을 구분하고 먼저 고칠 문제를 알려줘.
+```
+
+발표문이나 보고서의 사실 확인을 마친 뒤에는 다음처럼 요청합니다.
+
+```text
+$humanize
+이 발표 대본을 자연스러운 한국어로 다듬어줘.
+수치·근거·검증 결과·미확인 표시는 유지해줘.
+[대본 또는 파일 경로]
+```
+
+`humanize`는 MIT 공개 원본 [Humanizer](https://github.com/blader/humanizer)를 이 묶음에 맞게 구성한 스킬입니다. 자동 선택은 가능하며 확실히 지정하려면 위 이름을 붙입니다. 보안 스캐너·테스트 계정·배포 접근 권한은 별도로 필요할 수 있습니다. 설치만으로 사이트 검사가 수행되거나 안전성이 보증되지는 않습니다.
 
 ## 설치 후 바로 시작
 

@@ -17,7 +17,8 @@ class InstallTests(unittest.TestCase):
                          'explore-data', 'validate-data', 'data-visualization',
                          'llm-evaluation', 'systematic-debugging', 'using-superpowers',
                          'writing-plans', 'ponytail', 'ponytail-help',
-                         'ecc-verification-loop', 'ecc-search-first'} <= expected)
+                         'ecc-verification-loop', 'ecc-search-first',
+                         'web-security-check', 'humanize'} <= expected)
         with tempfile.TemporaryDirectory(prefix='bundle test ') as tmp:
             root = Path(tmp)
             with contextlib.redirect_stdout(io.StringIO()):
@@ -48,7 +49,10 @@ class InstallTests(unittest.TestCase):
                              'subagent-driven-development/scripts/task-brief',
                              'ponytail/BUNDLE.md', 'ponytail-gain/SOURCE.md',
                              'ecc-security-review/cloud-infrastructure-security.md',
-                             'probe-hackathon-coach/references/workflow-skills.md']:
+                             'probe-hackathon-coach/references/workflow-skills.md',
+                             'web-security-check/references/checks.md',
+                             'humanize/references/upstream-humanizer.md',
+                             'humanize/LICENSE.txt', 'humanize/BUNDLE.md']:
                 self.assertTrue((skills/relative).is_file(), relative)
             for entry in skills.glob('*/SOURCE.md'):
                 if (entry.parent/'BUNDLE.md').is_file():

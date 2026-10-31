@@ -42,6 +42,7 @@ AI 사원에게 업무를 확인하고, 참가자가 Codex와 해결책을 만�
 | 구현, 중간 점검 | [delivery.md](references/delivery.md) | 작은 작동 단위, 변경 이유, 갱신된 진행 상태 |
 | 검증, 오류 확인 | [verification.md](references/verification.md) | 예상·실제 결과, 실패 재현, 수정 후 재검증 |
 | 이해도 점검, 면접 연습 | [explainback.md](references/explainback.md) | 참가자가 답할 질문 한 개, 답변 후 근거 있는 피드백 |
+| 외부 공개 보안·최종 문장 정리 | [field-guide.md](references/field-guide.md)의 마지막 절 | `web-security-check`의 실제 근거, `humanize`의 사실 보존 윤문 |
 | 제출 점검 | [rubric.md](references/rubric.md), [records.md](references/records.md) | 기준별 근거 위치, 누락, 실행 방법, 확인된 한계 |
 
 사용자가 복합 요청을 하면 관련 모드를 이어서 수행한다. 명시적으로 구현을 요청했으면 계획만 제시하고 멈추지 않는다. 설치된 도구·스킬은 현재 작업에 필요한 것만 사용하고 새로운 프레임워크를 기본 요구사항으로 만들지 않는다.
