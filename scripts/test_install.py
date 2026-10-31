@@ -15,7 +15,9 @@ class InstallTests(unittest.TestCase):
         self.assertTrue({'frontend-design', 'vercel-react-best-practices',
                          'web-design-guidelines', 'webapp-testing', 'slides',
                          'explore-data', 'validate-data', 'data-visualization',
-                         'llm-evaluation', 'systematic-debugging'} <= expected)
+                         'llm-evaluation', 'systematic-debugging', 'using-superpowers',
+                         'writing-plans', 'ponytail', 'ponytail-help',
+                         'ecc-verification-loop', 'ecc-search-first'} <= expected)
         with tempfile.TemporaryDirectory(prefix='bundle test ') as tmp:
             root = Path(tmp)
             with contextlib.redirect_stdout(io.StringIO()):
@@ -39,6 +41,18 @@ class InstallTests(unittest.TestCase):
                              'systematic-debugging/root-cause-tracing.md',
                              'systematic-debugging/condition-based-waiting-example.ts']:
                 self.assertTrue((skills/relative).is_file(), relative)
+            for relative in ['using-superpowers/references/codex-tools.md',
+                             'brainstorming/scripts/server.cjs',
+                             'requesting-code-review/code-reviewer.md',
+                             'executing-plans/scripts/task-start',
+                             'subagent-driven-development/scripts/task-brief',
+                             'ponytail/BUNDLE.md', 'ponytail-gain/SOURCE.md',
+                             'ecc-security-review/cloud-infrastructure-security.md',
+                             'probe-hackathon-coach/references/workflow-skills.md']:
+                self.assertTrue((skills/relative).is_file(), relative)
+            for entry in skills.glob('*/SOURCE.md'):
+                if (entry.parent/'BUNDLE.md').is_file():
+                    self.assertTrue(any(p.is_file() for p in entry.parent.glob('LICENSE*')), entry.parent.name)
             for name in ['frontend-design', 'webapp-testing', 'slides',
                          'vercel-react-best-practices', 'web-design-guidelines',
                          'explore-data', 'validate-data', 'data-visualization',

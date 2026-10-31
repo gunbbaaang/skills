@@ -2,7 +2,7 @@
 
 **이 주소 하나만 기억하세요: `github.com/gunbbaaang/skills`**
 
-Probe 해커톤 준비를 위한 Codex 스킬 묶음입니다. 문제 정의와 검증을 돕는 한국어 코치, 작업 기록, 인계, 시각적 요약, 코드 관계도, 웹·PPT 제작을 **23개 스킬로 한 번에 설치**합니다. 원본 출처·버전·라이선스는 [출처 안내](THIRD_PARTY_NOTICES.md)와 [버전 기록](sources.lock.json)에 있습니다.
+Probe 해커톤 준비를 위한 Codex 스킬 묶음입니다. 문제 정의와 검증을 돕는 한국어 코치, 작업 기록, 인계, 시각화, 웹·PPT 제작, 데이터 검증과 개발 작업을 **51개 스킬로 한 번에 설치**합니다. 원본 출처·버전·라이선스는 [출처 안내](THIRD_PARTY_NOTICES.md)와 [버전 기록](sources.lock.json)에 있습니다.
 
 처음 쓴다면 **[Probe 실전 사용 순서 — 웹과 PPT까지](skills/probe-hackathon-coach/references/field-guide.md)**를 보세요. 단계별 요청문과 4시간을 가정한 시간표를 담았습니다.
 
@@ -66,6 +66,16 @@ npx --yes skills@1.7.4 add gunbbaaang/skills --skill '*' --agent codex --copy --
 
 모두 설치해도 매 작업에 모두 실행할 필요는 없습니다. Figma 전용 연동은 이 해커톤 묶음에 포함하지 않았습니다.
 
+### 추가 개발 스킬
+
+| 묶음 | 포함 범위 | 쓰는 목적 |
+|---|---|---|
+| [Superpowers](https://github.com/obra/superpowers) | 15종. 위 표의 `systematic-debugging` 포함 | 설계·계획·테스트·구현·리뷰·완료 검증 |
+| [Ponytail](https://github.com/DietrichGebert/ponytail) | 6종 | 작은 완성형 구현, 변경 검토, 남은 한계 정리 |
+| [ECC](https://github.com/affaan-m/ECC) | 선별 8종, `ecc-` 접두사 | 재사용 조사, API·오류 처리, 보안·검증, AI 비용, 근거 탐색·결정 기록 |
+
+기존 23개에 새 스킬 28개를 추가했습니다. **[전체 이름과 상황별 요청 예시](skills/probe-hackathon-coach/references/workflow-skills.md)**를 확인하세요. Codex 자동 선택을 유지하며, `$using-superpowers`, `$ponytail full`, `$ecc-verification-loop`처럼 직접 지정할 수도 있습니다. 원본 플러그인의 자동 훅·전역 설정까지 설치하는 것은 아닙니다.
+
 ## 설치 후 바로 시작
 
 ```text
@@ -96,6 +106,9 @@ Probe 실전 모드로 진행해줘. 이 터미널에서 너와 나누는 대화
 - **차트:** `$data-visualization 검증된 결과를 한국어 발표용 차트로 만들고 출처·기간·단위를 표시해줘.`
 - **AI 기능 평가:** `$llm-evaluation 우리 AI 기능의 정상·근거 없음·모호한 질문을 같은 기준으로 평가하고 실제 출력과 실패 사례를 기록해줘.`
 - **오류 해결:** `$systematic-debugging 오류를 재현하고 근거로 원인을 좁힌 뒤 최소 수정과 재검증을 진행해줘.`
+- **개발 흐름:** `$using-superpowers 이미 합의한 문제와 완료 기준을 이어받아 필요한 계획·구현·검증을 진행해줘.`
+- **작은 MVP:** `$ponytail full 핵심 흐름을 가장 작은 완성형으로 구현해줘. 필요한 오류 처리와 검증은 유지해줘.`
+- **최종 검증:** `$ecc-verification-loop 이 프로젝트에 해당하는 빌드·타입·테스트·변경 검토를 실행하고 실제 결과를 기록해줘.`
 
 스킬 목록이 현재 대화에서 아직 갱신되지 않으면 해당 `.agents/skills/<이름>/SKILL.md`를 읽어 달라고 하거나 새 Codex 세션에서 시작하세요.
 

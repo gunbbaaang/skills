@@ -14,7 +14,9 @@ This is a curated redistribution, not a claim of authorship of the upstream tool
 | Web Interface Guidelines snapshot | https://github.com/vercel-labs/web-interface-guidelines | MIT, Vercel Labs |
 | Slides | https://github.com/JetBrains/skills/tree/main/slides | Apache-2.0; upstream OpenAI author/source attribution retained |
 | Explore Data / Validate Data / Data Visualization | https://github.com/anthropics/knowledge-work-plugins/tree/main/data | Apache-2.0 from the data plugin's own LICENSE |
-| Systematic Debugging | https://github.com/obra/superpowers | MIT, Jesse Vincent |
+| Superpowers (15 skills, including Systematic Debugging) | https://github.com/obra/superpowers | MIT, Jesse Vincent |
+| Ponytail (6 skills) | https://github.com/DietrichGebert/ponytail | MIT, DietrichGebert |
+| ECC (8 selected skills) | https://github.com/affaan-m/ECC | MIT, Affaan Mustafa |
 | LLM Evaluation | https://github.com/wshobson/agents | MIT, Seth Hobson |
 | Probe Hackathon Coach | https://github.com/gunbbaaang/probe-hackathon-kit | Original preparation material from this user's project; no new blanket license is assigned here |
 
@@ -34,9 +36,17 @@ Local packaging changes:
 
 Local installer and packaging helpers are provided for this bundle. Third-party components retain their original licenses; no repository-wide license is substituted for them.
 
-2026-10-31 evidence-skills additions:
+2026-10-31 evidence-skills additions (version 1.2.0):
 
 - Three Anthropic data skills preserve their workflow/reference bodies and the data plugin's own Apache license. Host-specific argument hints and invocation flags are removed, connector links are relocated with the original connector document retained, and Korean/local-file guidance distinguishes examples, heuristics and actual evidence. The time-series example sorts each group before plotting.
 - Systematic Debugging preserves the four-phase method and supporting operational resources. References to unbundled mandatory Superpowers skills are replaced with self-contained reproduction and verification steps. Repeated failures prompt evidence review rather than an automatic architecture conclusion or mandatory approval for already-authorized work. Authoring logs and pressure-test prompts are omitted. No Superpowers plugin, hooks or subagent workflow is installed.
 - LLM Evaluation retains the upstream reference patterns with explicit notice that snippets require adaptation and are not validated turnkey code. A small local-first hackathon evaluation guide is added; perplexity wording and judge calibration guidance are corrected. No API keys, paid models, hosted datasets or external evaluation service are included or automatically invoked.
 - Popularity snapshots were checked on 2026-10-31 as discovery signals, not quality or score guarantees: skills.sh installs were approximately 5.9K (explore-data), 3.8K (validate-data), 14.0K (data-visualization), 314.2K (systematic-debugging), and 13.0K (llm-evaluation). The three upstream GitHub repositories had 33,985, 309,250, and 42,009 stars respectively. These values change over time.
+
+2026-10-31 workflow additions (version 1.3.0):
+
+- Superpowers adds the other 14 skills at the same pinned commit; the already packaged Systematic Debugging remains unchanged. Supporting prompts, references and optional helpers are retained. The using-superpowers and brainstorming descriptions are scoped to relevant development/design work, and bundle notes preserve existing user decisions, authorization and Probe records. Automatic discovery remains enabled.
+- `using-superpowers/references/codex-tools.md` uses current host schemas rather than stale model routing or configuration instructions. The two inline-execution helpers call sibling scripts through Bash so a copied installation does not rely on Unix executable bits. Helpers, visual companion and subagent workflows are not automatically started.
+- All six Ponytail skills preserve their MIT notices. Plugin namespace examples are mapped to standalone Codex names. The help page describes this bundle instead of unavailable global hooks, status bands or session import. Gain numbers remain the upstream author's benchmark claims and were not reproduced for this bundle.
+- ECC contributes search-first, api-design, error-handling, security-review, verification-loop, cost-aware-llm-pipeline, iterative-retrieval and architecture-decision-records under `ecc-` names. Existing resource files are retained. BUNDLE.md maps unavailable agent/tool names to current tools, reuses decision records, treats code/model/price examples as illustrative, and distinguishes real verification from placeholders. No ECC hook, background learning, global configuration or MCP service is installed.
+- ECC's README identifies its author as a September 2025 Anthropic x Forum Ventures hackathon winner. This is the author's report, not an independently verified event result or a claim that every skill in today's repository was used in that event. Source: the pinned repository README, About section.
